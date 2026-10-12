@@ -40,6 +40,9 @@ header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify
 header.site nav { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 0.9375rem; }
 header.site nav a { text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
 header.site nav a:hover { border-color: var(--heat); }
+/* 좁은 화면의 메뉴 단추. 체크 상자로 여닫아서 스크립트가 필요 없다. */
+.menu-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.burger { display: none; }
 footer.site { margin-top: 72px; padding: 24px 0 40px; border-top: 2px solid var(--ink); font-size: 0.8125rem; color: var(--soft); }
 footer.site p { margin: 0; }
 footer.site .more { margin-top: 12px; }
@@ -187,6 +190,18 @@ td[data-l="4"] { background: var(--heat); color: #fff; }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .wrap { padding: 0 16px; }
+  header.site .wrap { position: relative; }
+  .burger { display: grid; align-content: center; gap: 5px; width: 42px; height: 42px; padding: 0 9px; cursor: pointer; background: var(--card); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 var(--sand); }
+  .burger i { display: block; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.15s, opacity 0.15s; }
+  .menu-toggle:focus-visible + .burger { outline: 3px solid var(--heat); outline-offset: 2px; }
+  .menu-toggle:checked + .burger i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle:checked + .burger i:nth-child(2) { opacity: 0; }
+  .menu-toggle:checked + .burger i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  header.site nav { display: none; flex-direction: column; flex-wrap: nowrap; gap: 0; width: 100%; margin: 6px 0 4px; font-size: 1rem; background: var(--card); border: 2px solid var(--ink); border-radius: 14px; overflow: hidden; }
+  .menu-toggle:checked ~ nav { display: flex; }
+  header.site nav a { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  header.site nav a:last-child { border-bottom: 0; }
+  header.site nav a[aria-current] { font-weight: 800; background: var(--heat-soft); border-color: var(--line); }
   .hero { grid-template-columns: 1fr 108px; align-items: start; }
   .calc { grid-template-columns: 1fr; }
   .items { grid-template-columns: 1fr; }
@@ -203,12 +218,8 @@ td[data-l="4"] { background: var(--heat); color: #fff; }
   .steps li:nth-child(2) { min-height: 215px; }
   .steps li:nth-child(3) { min-height: 250px; }
 }
-@media (max-width: 560px) {
-  header.site nav { display: none; }
-}
 @media (max-width: 400px) {
   .tiles { gap: 6px; }
   .tile b { font-size: 0.75rem; }
-  header.site nav { display: none; }
   table.heat th, table.heat td { padding: 11px 6px; font-size: 0.9375rem; }
 }
