@@ -34,11 +34,11 @@ main > section { margin-top: 56px; }
 
 /* 머리말·꼬리말 */
 header.site { border-bottom: 2px solid var(--ink); }
-header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 58px; }
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; min-height: 58px; padding-top: 8px; padding-bottom: 8px; }
 .logo { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; letter-spacing: -0.03em; text-decoration: none; }
 .logo .mark { display: grid; place-items: center; width: 28px; height: 28px; color: var(--card); background: var(--heat); border: 2px solid var(--ink); border-radius: 50%; }
-header.site nav { display: flex; gap: 14px; font-size: 0.9375rem; }
-header.site nav a { text-decoration: none; border-bottom: 2px solid transparent; }
+header.site nav { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 0.9375rem; }
+header.site nav a { text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
 header.site nav a:hover { border-color: var(--heat); }
 footer.site { margin-top: 72px; padding: 24px 0 40px; border-top: 2px solid var(--ink); font-size: 0.8125rem; color: var(--soft); }
 footer.site p { margin: 0; }
