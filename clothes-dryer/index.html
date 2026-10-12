@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>의류건조기 전기요금 계산기 – 매일 돌리면 한 달 얼마?</title>
+<meta name="description" content="의류건조기 소비전력과 하루 사용 시간을 넣으면 누진제를 반영한 한 달 전기요금을 계산합니다. 히트펌프·히터식·미니 건조기 소비전력 범위와 사용 시간별 요금표 포함.">
+<meta property="og:title" content="의류건조기 전기요금 계산기 – 매일 돌리면 한 달 얼마?">
+<meta property="og:description" content="의류건조기 소비전력과 하루 사용 시간을 넣으면 누진제를 반영한 한 달 전기요금을 계산합니다. 히트펌프·히터식·미니 건조기 소비전력 범위와 사용 시간별 요금표 포함.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="canonical" href="https://home-calc.github.io/clothes-dryer/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>가전 전기요금 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/" aria-current="page">가전 전기요금</a><a href="/filter/">공기청정기 필터 찾기</a><a href="/size/">평수별 가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">애완동물 사료량</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero">
+<div>
+<h1>의류건조기 전기요금 계산기</h1>
+<p>의류건조기는 방식에 따라 전기를 쓰는 양이 두세 배 차이 납니다. 제품 라벨의 소비전력과 하루에 돌리는 시간을 넣어 한 달에 얼마가 늘어나는지 확인해 보세요.</p>
+</div>
+<div class="art"><svg viewBox="0 0 260 230" role="img" aria-label="의류건조기 그림">
+<circle cx="137" cy="122" r="86" fill="#f6c98f"/>
+<circle cx="130" cy="115" r="86" fill="none" stroke="#1f1b16" stroke-width="3.200"/>
+<g transform="translate(66 51) scale(4)" fill="none" stroke="#1f1b16" stroke-width="0.800" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="20" height="24" rx="3"/><circle cx="16" cy="17" r="6"/><path d="M12.500 17c1.200-1.400 2.300 1.400 3.500 0s2.300 1.400 3.500 0"/><path d="M10 8h2M15 8h1"/></g>
+<g fill="none" stroke="#e8491d" stroke-width="3.200" stroke-linecap="round">
+  <path d="M22 132c8-8-8-16 0-24s-8-16 0-24"/>
+  <path d="M238 132c8-8-8-16 0-24s-8-16 0-24"/>
+</g>
+</svg></div>
+</section>
+<div class="calc">
+<section class="panel" aria-label="계산기">
+
+<div class="fields">
+<div class="full">
+  <label for="watt">소비전력</label>
+  <span class="unit"><input id="watt" type="number" inputmode="numeric" min="0" step="10" value="1000"><em>W</em></span>
+  <div class="chips"><button type="button" data-watt="600">600W</button><button type="button" data-watt="1000">1,000W</button><button type="button" data-watt="1500">1,500W</button><button type="button" data-watt="2500">2,500W</button></div>
+</div>
+<div>
+  <label for="hours">하루 사용 시간</label>
+  <span class="unit"><input id="hours" type="number" inputmode="decimal" min="0" max="24" step="0.5" value="1.5"><em>시간</em></span>
+</div>
+<div>
+  <label for="days">한 달 사용 일수</label>
+  <span class="unit"><input id="days" type="number" inputmode="numeric" min="0" max="31" step="1" value="30"><em>일</em></span>
+</div>
+<div>
+  <label for="base">평소 월 사용량</label>
+  <span class="unit"><input id="base" type="number" inputmode="numeric" min="0" step="10" value="250"><em>kWh</em></span>
+</div>
+<div>
+  <label for="season">사용 시기</label>
+  <select id="season">
+    <option value="winter">겨울 (12~2월)</option>
+    <option value="summer">여름 (7~8월)</option>
+    <option value="other">봄·가을</option>
+  </select>
+</div>
+<p class="hint full">평소 월 사용량은 이 가전을 빼고 쓰는 양입니다. 전기요금 고지서의 "사용량"을 넣으면 됩니다.</p>
+</div>
+</section>
+
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">한 달 전기요금, 이만큼 더 나와요</p>
+  <p class="r-big"><span id="r-added">-</span></p>
+  <p class="r-sub">하루에 약 <span id="r-daily">-</span></p>
+  <div class="stamp" id="r-stamp" hidden></div>
+  <dl>
+    <div><dt>가전이 쓰는 전기</dt><dd id="r-kwh">-</dd></div>
+    <div><dt>쓰기 전 요금</dt><dd id="r-before">-</dd></div>
+    <div><dt>쓴 뒤 요금</dt><dd id="r-after">-</dd></div>
+    <div><dt>적용 구간</dt><dd id="r-tier">-</dd></div>
+  </dl>
+  <p class="r-warn" id="r-warn" hidden></p>
+</div>
+</section>
+</div>
+
+<section class="shelf" id="recs" hidden>
+<h2 id="rec-heading"></h2>
+<ul class="items" id="rec-list"></ul>
+</section>
+<p class="note" id="coupang-notice" hidden>가격은 10월 12일 기준이며 지금 쿠팡 가격과 다를 수 있습니다. 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+
+<section>
+<h2>의류건조기 소비전력·사용 시간별 한 달 전기요금</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">하루 1시간</th><th scope="col">하루 2시간</th><th scope="col">하루 3시간</th></tr></thead>
+<tbody>
+<tr><th scope="row">600W</th><td data-l="0">4,630원</td><td data-l="0">9,270원</td><td data-l="0">13,910원</td></tr>
+<tr><th scope="row">1,000W</th><td data-l="0">7,730원</td><td data-l="1">15,460원</td><td data-l="1">23,190원</td></tr>
+<tr><th scope="row">1,500W</th><td data-l="0">11,590원</td><td data-l="1">23,190원</td><td data-l="2">34,780원</td></tr>
+<tr><th scope="row">2,500W</th><td data-l="1">19,320원</td><td data-l="2">38,650원</td><td data-l="4">72,220원</td></tr>
+</tbody>
+</table></div>
+<p class="note">평소 월 250kWh 쓰는 집에서 30일 동안 썼을 때 늘어나는 금액입니다. 평소 사용량이 많은 집은 누진 단가가 높아 이보다 더 나옵니다.</p>
+</section>
+
+<section>
+<h2>의류건조기 종류별 소비전력</h2>
+<ul class="ranges">
+<li><span class="rn">히트펌프 9~10kg</span><span class="track" style="--seg:33.33333333333333%"><i style="left:16.666666666666664%;width:16.666666666666664%"></i></span><span class="rv">500~1,000W</span></li>
+<li><span class="rn">히트펌프 16kg 이상</span><span class="track" style="--seg:33.33333333333333%"><i style="left:23.333333333333332%;width:33.33333333333333%"></i></span><span class="rv">700~1,700W</span></li>
+<li><span class="rn">미니 건조기(히터식)</span><span class="track" style="--seg:33.33333333333333%"><i style="left:23.333333333333332%;width:26.666666666666668%"></i></span><span class="rv">700~1,500W</span></li>
+<li><span class="rn">히터식(전기 콘덴서)</span><span class="track" style="--seg:33.33333333333333%"><i style="left:66.66666666666666%;width:23.333333333333332%"></i></span><span class="rv">2,000~2,700W</span></li>
+<li class="axis" aria-hidden="true"><span class="rn"></span><span class="track"><u style="left:0%">0</u><u style="left:33.33333333333333%">1,000W</u><u style="left:66.66666666666666%">2,000W</u><u style="left:100%">3,000W</u></span><span class="rv"></span></li>
+</ul>
+<p class="note">위 범위는 흔히 팔리는 가정용 제품 기준의 어림값이고 제품마다 차이가 큽니다. 정확한 값은 제품 라벨의 "정격 소비전력"이나 에너지소비효율등급 라벨의 "1회 소비전력량"을 확인하세요.</p>
+</section>
+
+<section>
+<h2>계산할 때 알아둘 점</h2>
+<ol class="tips">
+<li>에너지소비효율등급 라벨에 "1회 소비전력량(kWh)"이 적혀 있으면 그 값이 더 정확합니다. 그 값에 한 달에 돌리는 횟수를 곱하면 한 달 사용량이 됩니다.</li>
+<li>히트펌프 건조기는 돌아가는 내내 정격 소비전력을 쓰지 않습니다. 실제 요금은 계산값보다 적게 나오는 것이 보통입니다.</li>
+<li>세탁기에서 탈수를 세게 하면 건조 시간이 줄어듭니다. 건조 시간이 곧 전기요금입니다.</li>
+<li>먼지 필터가 막히면 건조 시간이 길어집니다. 돌릴 때마다 비워 주세요.</li>
+</ol>
+</section>
+
+<section>
+<h2>주택용 전기요금 누진 구간</h2>
+<ol class="steps">
+<li><b>1단계</b><strong>120.0<small>원/kWh</small></strong><span>200kWh까지</span><span class="sm">7~8월은 300kWh까지</span><span class="sm">기본요금 910원</span></li>
+<li><b>2단계</b><strong>214.6<small>원/kWh</small></strong><span>201~400kWh</span><span class="sm">7~8월은 301~450kWh</span><span class="sm">기본요금 1,600원</span></li>
+<li><b>3단계</b><strong>307.3<small>원/kWh</small></strong><span>400kWh 초과</span><span class="sm">7~8월은 450kWh 초과</span><span class="sm">기본요금 7,300원</span></li>
+</ol>
+<p class="note">여기에 기후환경요금(kWh당 9원)과 연료비조정요금(kWh당 5원), 부가가치세 10%, 전력산업기반기금 2.7%가 붙습니다. 여름과 겨울에 1,000kWh를 넘겨 쓴 부분은 kWh당 736.2원입니다.</p>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>한국전력 주택용 전력(저압) 요금표, 2026년 4분기 기준으로 계산합니다. 기본요금·전력량요금·기후환경요금·연료비조정요금·부가가치세·전력산업기반기금을 더한 예상액이라 실제 고지 금액과 다를 수 있습니다. 아파트 고압 요금, 복지 할인, TV 수신료는 넣지 않았습니다.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/filter/">공기청정기 필터 찾기</a> · <a href="/size/">평수별 가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">애완동물 사료량</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script id="calc-data" type="application/json">{"category":"의류건조기","products":{"의류건조기":[{"label":"에스틸로 MIDI 스마트 미니건조기 5kg","link":"https://link.coupang.com/a/hMWB6c1YYK","image":"https://thumbnail12.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/image_audit/stage/manual/a28c3dda200b9253c57a9b92c047c836ed34cef32144c12afb0e4cff1852_1785115060863.jpg","price":318800,"rating":4.5,"ratingCount":80},{"label":"미닉스 미니건조기 프로 플러스 3.5kg 고객직접설치","link":"https://link.coupang.com/a/hMWCwN51rM","image":"https://thumbnail13.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/f987/cd74ea9b6ab0f09032ed64ea839466a8db76f8839fc982c1d24b411648b7.jpg","price":287040,"rating":5,"ratingCount":1324},{"label":"위닉스 인버터 컴팩트 건조기 4kg 고객직접설치","link":"https://link.coupang.com/a/hMWC3l0o8q","image":"https://thumbnail2.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2025/02/05/14/0/dab48cd7-f1d4-48f5-95ff-e3df4bfa7234.jpg","price":330280,"rating":5,"ratingCount":3208},{"label":"삼성전자 AI 건조기 21kg 방문설치","link":"https://link.coupang.com/a/hMWDt9oBr2","image":"https://thumbnail14.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/33865361162357-7afb8551-396c-4d73-af2c-5807996b2a5e.jpg","price":818620,"rating":5,"ratingCount":2699}]}}</script>
+<script type="module" src="/assets/calc.js"></script>
+</body>
+</html>
