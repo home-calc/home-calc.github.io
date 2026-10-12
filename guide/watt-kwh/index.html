@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소비전력(W)과 사용량(kWh) 읽는 법 – 가전 전기요금 계산기</title>
+<meta name="description" content="가전 라벨의 소비전력(W)을 한 달 사용량(kWh)과 전기요금으로 바꾸는 방법, 라벨 값과 실제 사용량이 다른 이유를 설명합니다.">
+<meta property="og:title" content="소비전력(W)과 사용량(kWh) 읽는 법 – 가전 전기요금 계산기">
+<meta property="og:description" content="가전 라벨의 소비전력(W)을 한 달 사용량(kWh)과 전기요금으로 바꾸는 방법, 라벨 값과 실제 사용량이 다른 이유를 설명합니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="canonical" href="https://home-calc.github.io/home-calc/guide/watt-kwh/">
+<meta name="naver-site-verification" content="27bc3b5538a29eb08a751360f9dce5a549c84c82">
+<meta name="google-site-verification" content="4GUmYQRC9_OeV9ZivfkyEVk7M7LTSaiJF4uIIjkiIe8">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/home-calc/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/home-calc/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>가전 전기요금 계산기</a>
+<nav><a href="/home-calc/" aria-current="page">전기요금</a><a href="/home-calc/filter/">필터 찾기</a><a href="/home-calc/size/">가전 용량</a><a href="/home-calc/tv/">TV 거리</a><a href="/home-calc/pet/">사료량</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/home-calc/guide/">읽을거리</a></p>
+<h1>소비전력(W)과 사용량(kWh) 읽는 법</h1>
+<p class="lead">제품 라벨에는 W(와트)가 적혀 있고 고지서에는 kWh(킬로와트시)가 적혀 있습니다. 둘을 이어 주는 식은 간단합니다.</p>
+</div>
+</section>
+
+<section class="prose">
+<h2>W 는 순간, kWh 는 누적</h2>
+<p>W는 가전이 켜져 있는 순간에 쓰는 전기의 크기이고, kWh는 그렇게 쓴 전기를 시간만큼 쌓은 양입니다. 전기요금은 kWh에 매겨집니다.</p>
+<p>사용량(kWh) = 소비전력(W) ÷ 1,000 × 하루 사용 시간 × 사용 일수</p>
+<p>2,000W 히터를 하루 4시간, 30일 쓰면 2 × 4 × 30 = 240kWh입니다.</p>
+</section>
+
+<section class="prose">
+<h2>가전별로 계산해 보면</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">소비전력</th><th scope="col">하루 사용</th><th scope="col">한 달 사용량</th><th scope="col">늘어나는 요금</th></tr></thead>
+<tbody>
+<tr><th scope="row">전기히터</th><td data-l="0">2,000W</td><td data-l="0">4시간</td><td data-l="0">240kWh</td><td data-l="0">77,660원</td></tr>
+<tr><th scope="row">온풍기</th><td data-l="0">2,000W</td><td data-l="0">4시간</td><td data-l="0">240kWh</td><td data-l="0">77,660원</td></tr>
+<tr><th scope="row">전기장판</th><td data-l="0">200W</td><td data-l="0">8시간</td><td data-l="0">48kWh</td><td data-l="0">12,370원</td></tr>
+<tr><th scope="row">온수매트</th><td data-l="0">250W</td><td data-l="0">8시간</td><td data-l="0">60kWh</td><td data-l="0">15,460원</td></tr>
+<tr><th scope="row">제습기</th><td data-l="0">300W</td><td data-l="0">6시간</td><td data-l="0">54kWh</td><td data-l="0">13,910원</td></tr>
+<tr><th scope="row">의류건조기</th><td data-l="0">1,000W</td><td data-l="0">1.5시간</td><td data-l="0">45kWh</td><td data-l="0">11,590원</td></tr>
+<tr><th scope="row">벽걸이 에어컨</th><td data-l="0">700W</td><td data-l="0">8시간</td><td data-l="0">168kWh</td><td data-l="0">51,590원</td></tr>
+<tr><th scope="row">스탠드 에어컨</th><td data-l="0">1,800W</td><td data-l="0">8시간</td><td data-l="0">432kWh</td><td data-l="0">147,180원</td></tr>
+</tbody>
+</table></div>
+<p>소비전력은 흔한 제품의 대표값이고, 요금은 평소 월 250kWh를 쓰는 집에서 겨울에 쉬지 않고 켰을 때의 값입니다. 실제 제품의 라벨 값으로 다시 계산해 보세요.</p>
+</section>
+
+<section class="prose">
+<h2>라벨 값보다 덜 나오는 이유</h2>
+<p>라벨의 "정격 소비전력"은 가장 세게 돌아갈 때의 값입니다. 온도 조절기가 있는 난방 가전은 설정 온도에 닿으면 꺼졌다 켜지기를 반복하고, 에어컨과 제습기도 압축기가 쉬는 시간이 있습니다. 그래서 실제 사용량은 계산값보다 적은 것이 보통입니다.</p>
+<p>계산값은 "이보다 많이 나오지는 않는다"는 위쪽 한계로 보시면 됩니다. 정확한 값이 필요하면 콘센트에 꽂는 전력 측정기로 며칠 재 보는 방법이 가장 확실합니다.</p>
+</section>
+
+<section class="prose">
+<h2>라벨은 어디에 있나요</h2>
+<ul>
+<li>본체 뒷면이나 바닥의 은색·흰색 스티커에 "정격 소비전력" 또는 "소비전력"으로 적혀 있습니다.</li>
+<li>전기장판과 온수매트는 조절기나 보일러 본체에 적혀 있습니다.</li>
+<li>에어컨은 "냉방 소비전력"을 봅니다. 냉방 능력(W)과 헷갈리기 쉬운데, 냉방 능력은 식히는 힘이고 전기요금과 관계있는 것은 소비전력입니다.</li>
+<li>에너지소비효율등급 라벨이 붙은 제품은 월간 또는 연간 소비전력량(kWh)이 따로 적혀 있습니다. 정해진 시험 조건에서 잰 값이라 우리 집 사용 시간과는 다를 수 있습니다.</li>
+</ul>
+</section>
+
+<section>
+<h2>바로 계산해 보기</h2>
+<ul class="pages">
+<li><a href="/home-calc/"><span><b>가전 전기요금 계산기</b><small>라벨의 W 와 사용 시간을 넣어 계산</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>글에 나오는 금액과 수치는 이 사이트의 계산기와 같은 식으로 계산한 어림값입니다. 제품과 집의 조건에 따라 달라질 수 있습니다.</p>
+<p class="more"><a href="/home-calc/">전기요금</a> · <a href="/home-calc/filter/">필터 찾기</a> · <a href="/home-calc/size/">가전 용량</a> · <a href="/home-calc/tv/">TV 거리</a> · <a href="/home-calc/pet/">사료량</a></p>
+<p class="info"><a href="/home-calc/guide/">읽을거리</a> · <a href="/home-calc/faq/">자주 묻는 질문</a> · <a href="/home-calc/about/">사이트 소개</a> · <a href="/home-calc/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+
+</body>
+</html>

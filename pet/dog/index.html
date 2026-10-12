@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강아지 사료 급여량 계산기 – 체중별 하루 사료량(g)</title>
+<meta name="description" content="강아지 체중과 상태, 사료 열량을 넣으면 하루 사료 급여량(g)과 한 달 사료량을 계산합니다. 체중별 급여량 표도 함께 봅니다.">
+<meta property="og:title" content="강아지 사료 급여량 계산기 – 체중별 하루 사료량(g)">
+<meta property="og:description" content="강아지 체중과 상태, 사료 열량을 넣으면 하루 사료 급여량(g)과 한 달 사료량을 계산합니다. 체중별 급여량 표도 함께 봅니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="canonical" href="https://home-calc.github.io/home-calc/pet/dog/">
+<meta name="naver-site-verification" content="27bc3b5538a29eb08a751360f9dce5a549c84c82">
+<meta name="google-site-verification" content="4GUmYQRC9_OeV9ZivfkyEVk7M7LTSaiJF4uIIjkiIe8">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/home-calc/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/home-calc/pet/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>사료 급여량 계산기</a>
+<nav><a href="/home-calc/">전기요금</a><a href="/home-calc/filter/">필터 찾기</a><a href="/home-calc/size/">가전 용량</a><a href="/home-calc/tv/">TV 거리</a><a href="/home-calc/pet/" aria-current="page">사료량</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/home-calc/pet/">사료 급여량 계산기</a></p>
+<h1>강아지 사료 급여량 계산기</h1>
+<p class="lead">체중과 상태를 고르고 사료 포장에 적힌 열량을 넣으면 하루에 줄 사료량을 알려 줍니다. 간식을 준다면 그만큼 사료를 줄여 주세요.</p>
+</div>
+</section>
+<div class="calc" data-tool="pet" data-pet="dog">
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-kg">체중</label><span class="unit"><input id="in-kg" data-in="kg" type="number" inputmode="decimal" min="0" step="0.1" value="5"><em>kg</em></span></div>
+<div><label for="in-state">상태</label><select id="in-state" data-in="state"><option value="0">중성화한 성견</option><option value="1">중성화하지 않은 성견</option><option value="2">체중을 줄여야 하는 성견</option><option value="3">4개월 미만 강아지</option><option value="4">4개월~성견 전 강아지</option></select></div>
+<div><label for="in-kcal">사료 열량</label><span class="unit"><input id="in-kcal" data-in="kcal" type="number" inputmode="numeric" min="0" step="10" value="3500"><em>kcal/kg</em></span></div>
+<div><label for="in-bag">사료 한 봉지</label><span class="unit"><input id="in-bag" data-in="bag" type="number" inputmode="decimal" min="0" step="0.1" value="2"><em>kg</em></span></div>
+<p class="hint full">사료 열량은 포장 뒷면의 "대사 에너지(ME)"에 적혀 있습니다. 100g당으로 적혀 있으면 10을 곱해 넣으세요.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">하루 사료량</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>한 달 사료량</dt><dd data-out="month">-</dd></div><div><dt>한 봉지로</dt><dd data-out="bag">-</dd></div></dl>
+</div>
+</section>
+</div>
+<section class="shelf">
+<h2>강아지 사료 추천 제품</h2>
+<ul class="items">
+<li><a class="ph" href="https://link.coupang.com/a/hMZw87i7P2" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://t3c.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/342069117199863-93234329-f01c-4867-b979-c0db3299327b.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>마이펫닥터 강아지 시그니처 티어스 컨트롤 기능성 사료</b><small>리뷰 24,911개</small><small class="price">18,000원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hMZw87i7P2" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hMZxAsVnDE" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail10.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2675429857135-b08f2d38-5c6d-4052-8437-18272166d746.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>본아페티 강아지 기능성 사료</b><small>리뷰 6,761개</small><small class="price">19,800원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hMZxAsVnDE" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hMZx5OPm7U" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail4.coupangcdn.com/thumbnails/remote/212x212ex/image/1025_amir_coupang_oct_80k/8cd4/d4e2f2d5d255ecda1cb3f626d7b773e3f65d8740fcb6e14d2fbcdeca102c.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>탐사 강아지 사료 연어 레시피</b><small>리뷰 75,032개</small><small class="price">15,990원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hMZx5OPm7U" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hMZyxUR8Tc" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail10.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/27720278012110-07a1f446-663f-4e55-aefc-1986b190f3ea.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>잘먹잘싸 6free 강아지 사료</b><small>리뷰 46,140개</small><small class="price">17,800원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hMZyxUR8Tc" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+</ul>
+<p class="note">가격은 10월 12일 기준이며 지금 쿠팡 가격과 다를 수 있습니다. 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</section>
+
+<section>
+<h2>강아지 체중별 하루 사료량</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">중성화한 성견</th><th scope="col">중성화하지 않은 성견</th><th scope="col">체중을 줄여야 하는 성견</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=2">2kg</button></th><td data-l="0">54g</td><td data-l="0">61g</td><td data-l="0">34g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=3">3kg</button></th><td data-l="0">73g</td><td data-l="0">82g</td><td data-l="0">46g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=5">5kg</button></th><td data-l="0">107g</td><td data-l="0">120g</td><td data-l="0">67g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=7">7kg</button></th><td data-l="0">138g</td><td data-l="0">155g</td><td data-l="0">86g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=10">10kg</button></th><td data-l="0">180g</td><td data-l="0">202g</td><td data-l="0">112g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=15">15kg</button></th><td data-l="0">244g</td><td data-l="0">274g</td><td data-l="0">152g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=20">20kg</button></th><td data-l="0">303g</td><td data-l="0">340g</td><td data-l="0">189g</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=30">30kg</button></th><td data-l="0">410g</td><td data-l="0">461g</td><td data-l="0">256g</td></tr>
+</tbody>
+</table></div>
+<p class="note">사료 열량 3,500kcal/kg 기준입니다. 체중을 누르면 위 계산기에 그 값이 들어갑니다.</p>
+</section>
+
+<section>
+<h2>급여할 때 알아둘 점</h2>
+<ol class="tips">
+<li>계산값은 하루 전체 양입니다. 성견은 보통 하루 2번으로 나눠 줍니다.</li>
+<li>사료마다 열량이 달라서 같은 무게를 줘도 먹는 열량이 다릅니다. 사료를 바꾸면 열량을 다시 넣어 계산하세요.</li>
+<li>2~4주마다 체중을 재 보고 늘거나 줄면 급여량을 10%씩 조절하세요. 살이 계속 찐다면 상태를 "체중을 줄여야 하는" 쪽으로 바꿔 계산해 보세요.</li>
+</ol>
+</section>
+
+<section>
+<h2>다른 계산기</h2>
+<ul class="pages">
+<li><a href="/home-calc/pet/cat/"><span><b>고양이 사료 급여량 계산기</b><small>체중별 하루 사료량</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>수의 영양학에서 널리 쓰는 휴식 에너지 요구량(RER = 70 × 체중^0.75)에 상태별 계수를 곱해 계산한 어림값입니다. 품종, 활동량, 건강 상태에 따라 달라지니 체중 변화를 보며 조절하고, 질환이 있으면 수의사와 상의하세요.</p>
+<p class="more"><a href="/home-calc/">전기요금</a> · <a href="/home-calc/filter/">필터 찾기</a> · <a href="/home-calc/size/">가전 용량</a> · <a href="/home-calc/tv/">TV 거리</a> · <a href="/home-calc/pet/">사료량</a></p>
+<p class="info"><a href="/home-calc/guide/">읽을거리</a> · <a href="/home-calc/faq/">자주 묻는 질문</a> · <a href="/home-calc/about/">사이트 소개</a> · <a href="/home-calc/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/home-calc/assets/tools.js"></script>
+</body>
+</html>

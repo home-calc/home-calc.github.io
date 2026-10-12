@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전기히터 전기요금 계산기 – 하루 몇 시간 쓰면 한 달 얼마?</title>
+<meta name="description" content="전기히터 소비전력과 하루 사용 시간을 넣으면 누진제를 반영한 한 달 전기요금을 계산합니다. 800W·1000W·2000W·3000W 사용 시간별 요금표 포함.">
+<meta property="og:title" content="전기히터 전기요금 계산기 – 하루 몇 시간 쓰면 한 달 얼마?">
+<meta property="og:description" content="전기히터 소비전력과 하루 사용 시간을 넣으면 누진제를 반영한 한 달 전기요금을 계산합니다. 800W·1000W·2000W·3000W 사용 시간별 요금표 포함.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="canonical" href="https://home-calc.github.io/home-calc/electric-heater/">
+<meta name="naver-site-verification" content="27bc3b5538a29eb08a751360f9dce5a549c84c82">
+<meta name="google-site-verification" content="4GUmYQRC9_OeV9ZivfkyEVk7M7LTSaiJF4uIIjkiIe8">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/home-calc/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/home-calc/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>가전 전기요금 계산기</a>
+<nav><a href="/home-calc/" aria-current="page">전기요금</a><a href="/home-calc/filter/">필터 찾기</a><a href="/home-calc/size/">가전 용량</a><a href="/home-calc/tv/">TV 거리</a><a href="/home-calc/pet/">사료량</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero">
+<div>
+<h1>전기히터 전기요금 계산기</h1>
+<p>전기히터는 소비전력이 커서 누진 구간을 넘기기 쉬운 가전입니다. 제품 라벨의 소비전력과 하루 사용 시간을 넣어 우리 집 기준으로 얼마가 더 나오는지 확인해 보세요.</p>
+</div>
+<div class="art"><svg viewBox="0 0 260 230" role="img" aria-label="전기히터 그림">
+<g transform="translate(6 6)" stroke="none">
+  <rect x="66" y="26" width="124" height="148" rx="20" fill="#f6c98f"/>
+  <path d="M84 174h88l10 22H74z" fill="#f6c98f"/>
+</g>
+<g fill="none" stroke="#1f1b16" stroke-width="3.200" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="66" y="26" width="124" height="148" rx="20"/>
+  <rect x="80" y="42" width="96" height="92" rx="10" fill="#1f1b16"/>
+  <path d="M84 174l-10 22h108l-10-22"/>
+  <path d="M190 150c22 0 30 12 30 26s-10 20-22 20" />
+  <rect x="186" y="190" width="14" height="12" rx="3" fill="#fffaf0"/>
+  <path d="M186 193h-6M186 199h-6"/>
+  <circle cx="104" cy="154" r="6" fill="#fffaf0"/>
+  <circle cx="128" cy="154" r="6" fill="#fffaf0"/>
+  <path d="M150 154h22"/>
+</g>
+<g stroke="#ff7a3a" stroke-width="7" stroke-linecap="round">
+  <path d="M92 62h72"/><path d="M92 88h72"/><path d="M92 114h72"/>
+</g>
+<g stroke="#ffd0a6" stroke-width="2" stroke-linecap="round">
+  <path d="M94 60h68"/><path d="M94 86h68"/><path d="M94 112h68"/>
+</g>
+<g stroke="#57504a" stroke-width="1.600">
+  <path d="M104 44v88M128 44v88M152 44v88"/>
+</g>
+<g fill="none" stroke="#e8491d" stroke-width="3.200" stroke-linecap="round">
+  <path d="M30 96c8-8-8-16 0-24s-8-16 0-24"/>
+  <path d="M48 110c8-8-8-16 0-24s-8-16 0-24"/>
+  <path d="M222 84c8-8-8-16 0-24s-8-16 0-24"/>
+</g>
+</svg></div>
+</section>
+<div class="calc">
+<section class="panel" aria-label="계산기">
+
+<div class="fields">
+<div class="full">
+  <label for="watt">소비전력</label>
+  <span class="unit"><input id="watt" type="number" inputmode="numeric" min="0" step="10" value="2000"><em>W</em></span>
+  <div class="chips"><button type="button" data-watt="800">800W</button><button type="button" data-watt="1000">1,000W</button><button type="button" data-watt="2000">2,000W</button><button type="button" data-watt="3000">3,000W</button></div>
+</div>
+<div>
+  <label for="hours">하루 사용 시간</label>
+  <span class="unit"><input id="hours" type="number" inputmode="decimal" min="0" max="24" step="0.5" value="4"><em>시간</em></span>
+</div>
+<div>
+  <label for="days">한 달 사용 일수</label>
+  <span class="unit"><input id="days" type="number" inputmode="numeric" min="0" max="31" step="1" value="30"><em>일</em></span>
+</div>
+<div>
+  <label for="base">평소 월 사용량</label>
+  <span class="unit"><input id="base" type="number" inputmode="numeric" min="0" step="10" value="250"><em>kWh</em></span>
+</div>
+<div>
+  <label for="season">사용 시기</label>
+  <select id="season">
+    <option value="winter">겨울 (12~2월)</option>
+    <option value="summer">여름 (7~8월)</option>
+    <option value="other">봄·가을</option>
+  </select>
+</div>
+<p class="hint full">평소 월 사용량은 이 가전을 빼고 쓰는 양입니다. 전기요금 고지서의 "사용량"을 넣으면 됩니다.</p>
+</div>
+</section>
+
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">한 달 전기요금, 이만큼 더 나와요</p>
+  <p class="r-big"><span id="r-added">-</span></p>
+  <p class="r-sub">하루에 약 <span id="r-daily">-</span></p>
+  <div class="stamp" id="r-stamp" hidden></div>
+  <dl>
+    <div><dt>가전이 쓰는 전기</dt><dd id="r-kwh">-</dd></div>
+    <div><dt>쓰기 전 요금</dt><dd id="r-before">-</dd></div>
+    <div><dt>쓴 뒤 요금</dt><dd id="r-after">-</dd></div>
+    <div><dt>적용 구간</dt><dd id="r-tier">-</dd></div>
+  </dl>
+  <p class="r-warn" id="r-warn" hidden></p>
+</div>
+</section>
+</div>
+<section class="shelf" id="alts" hidden>
+<h2>같은 시간 동안 저전력 난방을 쓰면</h2>
+<ul class="items" id="alt-list"></ul>
+<p class="note">방 전체를 데우는 히터와 달리 몸에 닿는 부분만 데우는 제품이라 용도가 다릅니다.</p>
+</section>
+<section class="shelf" id="recs" hidden>
+<h2 id="rec-heading"></h2>
+<ul class="items" id="rec-list"></ul>
+</section>
+<p class="note" id="coupang-notice" hidden>가격은 10월 12일 기준이며 지금 쿠팡 가격과 다를 수 있습니다. 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+
+<section>
+<h2>전기히터 소비전력·사용 시간별 한 달 전기요금</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">하루 2시간</th><th scope="col">하루 4시간</th><th scope="col">하루 8시간</th></tr></thead>
+<tbody>
+<tr><th scope="row">800W</th><td data-l="0">12,370원</td><td data-l="0">24,730원</td><td data-l="1">60,270원</td></tr>
+<tr><th scope="row">1,000W</th><td data-l="0">15,460원</td><td data-l="0">30,910원</td><td data-l="1">77,660원</td></tr>
+<tr><th scope="row">2,000W</th><td data-l="0">30,910원</td><td data-l="1">77,660원</td><td data-l="3">164,560원</td></tr>
+<tr><th scope="row">3,000W</th><td data-l="1">55,930원</td><td data-l="2">121,110원</td><td data-l="4">251,460원</td></tr>
+</tbody>
+</table></div>
+<p class="note">평소 월 250kWh 쓰는 집에서 30일 동안 썼을 때 늘어나는 금액입니다. 평소 사용량이 많은 집은 누진 단가가 높아 이보다 더 나옵니다.</p>
+</section>
+
+<section>
+<h2>전기히터 종류별 소비전력</h2>
+<ul class="ranges">
+<li><span class="rn">석영관·할로겐 히터</span><span class="track" style="--seg:33.33333333333333%"><i style="left:13.333333333333334%;width:26.666666666666668%"></i></span><span class="rv">400~1,200W</span></li>
+<li><span class="rn">카본 히터</span><span class="track" style="--seg:33.33333333333333%"><i style="left:16.666666666666664%;width:16.666666666666664%"></i></span><span class="rv">500~1,000W</span></li>
+<li><span class="rn">PTC 온풍기</span><span class="track" style="--seg:33.33333333333333%"><i style="left:33.33333333333333%;width:33.33333333333333%"></i></span><span class="rv">1,000~2,000W</span></li>
+<li><span class="rn">컨벡터</span><span class="track" style="--seg:33.33333333333333%"><i style="left:33.33333333333333%;width:33.33333333333333%"></i></span><span class="rv">1,000~2,000W</span></li>
+<li><span class="rn">오일 라디에이터</span><span class="track" style="--seg:33.33333333333333%"><i style="left:33.33333333333333%;width:50%"></i></span><span class="rv">1,000~2,500W</span></li>
+<li class="axis" aria-hidden="true"><span class="rn"></span><span class="track"><u style="left:0%">0</u><u style="left:33.33333333333333%">1,000W</u><u style="left:66.66666666666666%">2,000W</u><u style="left:100%">3,000W</u></span><span class="rv"></span></li>
+</ul>
+<p class="note">위 범위는 일반적인 가정용 제품 기준입니다. 정확한 값은 제품 뒷면 라벨이나 설명서의 "정격 소비전력"을 확인하세요.</p>
+</section>
+
+<section>
+<h2>계산할 때 알아둘 점</h2>
+<ol class="tips">
+<li>온도 조절기가 있는 제품은 설정 온도에 도달하면 꺼졌다 켜지므로 실제 요금은 계산값보다 적게 나옵니다. 계산값은 계속 켜 둔 경우의 최대치로 보시면 됩니다.</li>
+<li>강·약 단계가 있다면 약 단계의 소비전력으로 다시 계산해 보세요. 2,000W 제품의 약 단계는 보통 1,000W 안팎입니다.</li>
+<li>기존 사용량이 200kWh 근처라면 히터 사용으로 누진 2단계에, 400kWh 근처라면 3단계에 들어가 kWh당 단가가 크게 오릅니다.</li>
+</ol>
+</section>
+
+<section>
+<h2>주택용 전기요금 누진 구간</h2>
+<ol class="steps">
+<li><b>1단계</b><strong>120.0<small>원/kWh</small></strong><span>200kWh까지</span><span class="sm">7~8월은 300kWh까지</span><span class="sm">기본요금 910원</span></li>
+<li><b>2단계</b><strong>214.6<small>원/kWh</small></strong><span>201~400kWh</span><span class="sm">7~8월은 301~450kWh</span><span class="sm">기본요금 1,600원</span></li>
+<li><b>3단계</b><strong>307.3<small>원/kWh</small></strong><span>400kWh 초과</span><span class="sm">7~8월은 450kWh 초과</span><span class="sm">기본요금 7,300원</span></li>
+</ol>
+<p class="note">여기에 기후환경요금(kWh당 9원)과 연료비조정요금(kWh당 5원), 부가가치세 10%, 전력산업기반기금 2.7%가 붙습니다. 여름과 겨울에 1,000kWh를 넘겨 쓴 부분은 kWh당 736.2원입니다.</p>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>한국전력 주택용 전력(저압) 요금표, 2026년 4분기 기준으로 계산합니다. 기본요금·전력량요금·기후환경요금·연료비조정요금·부가가치세·전력산업기반기금을 더한 예상액이라 실제 고지 금액과 다를 수 있습니다. 아파트 고압 요금, 복지 할인, TV 수신료는 넣지 않았습니다.</p>
+<p class="more"><a href="/home-calc/">전기요금</a> · <a href="/home-calc/filter/">필터 찾기</a> · <a href="/home-calc/size/">가전 용량</a> · <a href="/home-calc/tv/">TV 거리</a> · <a href="/home-calc/pet/">사료량</a></p>
+<p class="info"><a href="/home-calc/guide/">읽을거리</a> · <a href="/home-calc/faq/">자주 묻는 질문</a> · <a href="/home-calc/about/">사이트 소개</a> · <a href="/home-calc/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script id="calc-data" type="application/json">{"category":"전기히터","alternatives":[{"name":"전기요(1인용)","watt":100,"label":"일신 한일의료기 27년형 워셔블 전자파없는 전기장판 탄소매트","link":"https://link.coupang.com/a/hMVORFknqS","image":"https://t5c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/74fb/d6a0577dac1a40af20d9c8ad84ca51c054eea0f38d72533cd88061eea1f5.png","price":119000,"rating":5,"ratingCount":251},{"name":"온수매트","watt":250,"label":"비나잇 리모컨형 온수매트 워셔블 양면사용","link":"https://link.coupang.com/a/hMVRcAYg1e","image":"https://t2a.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/65be/cc93f8f56c4c52f9132bae30cf2ced3285a26ae37442749f1e97f3a71aac.jpg","price":279000,"rating":5,"ratingCount":105}],"products":{"전기히터":[{"label":"슈어홈 1초발열 프리미엄 스탠드 카본히터 14인치 컨벡션","link":"https://link.coupang.com/a/hMWkYskGZw","image":"https://thumbnail11.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/5708/3feec539985990221e2c9737e0fa6b0a16367022257c16ffb57c262381a6.png","price":54900,"rating":4.5,"ratingCount":368},{"label":"5세대 2초발열 오방난로 사무실 전기 히터 절전형","link":"https://link.coupang.com/a/hMWlsRbXPM","image":"https://t4c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/e162/6b5464a0d8fd83f406f6e1e5784f821d90c1dc8d00fdb073b2b1b186c19e.png","price":83900,"rating":4.5,"ratingCount":146},{"label":"일레드 EHH-800 하이라이트 전기히터 선풍기형","link":"https://link.coupang.com/a/hMWlOphQ5s","image":"https://thumbnail12.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/4ad5/36e6cc6d0975f9e65568062f7bb889906f70c90e467414142675f78bc051.png","price":47500,"rating":5,"ratingCount":101},{"label":"모리츠 스퀘어 리플렉트 히터 블랙","link":"https://link.coupang.com/a/hMWmgTk7Eq","image":"https://t1c.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/111823210227394-858f9aba-ef85-42c0-8b37-29d7ca583be0.jpg","price":25890,"rating":5,"ratingCount":48}]}}</script>
+<script type="module" src="/home-calc/assets/calc.js"></script>
+</body>
+</html>
