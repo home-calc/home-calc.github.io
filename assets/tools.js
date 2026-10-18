@@ -1,10 +1,10 @@
 // 평수별 가전 용량, TV 시청 거리, 사료 급여량, 공모주·배당, 청약 가점, 도시가스 요금, 육아 계산기의 브라우저 동작.
 // 입력은 [data-in="이름"], 결과는 [data-out="이름"] 으로 찾는다.
-import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=6bb900fa';
-import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=6bb900fa';
-import { gasBill } from './gas-rules.js?v=6bb900fa';
-import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=6bb900fa';
-import { ACTIVITY, DIET_CUT, FOODS, KID_FOODS, husband, kidSnack, maleEer } from './snack-rules.js?v=6bb900fa';
+import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=50787709';
+import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=50787709';
+import { gasBill } from './gas-rules.js?v=50787709';
+import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=50787709';
+import { ACTIVITY, DIET_CUT, FOODS, SNACK_WHO, husband, maleEer, snackBudget } from './snack-rules.js?v=50787709';
 
 const root = document.querySelector('[data-tool]');
 const val = (name) => {
@@ -156,16 +156,19 @@ Object.assign(tools, {
     show('diet', `${fix(diet)}kcal (−${fix(DIET_CUT)})`);
     show('snack', `${fix(snack)}kcal · 견과 ${fix(snack / FOODS.nuts[1], 1)}봉`);
   },
-  kidsnack() {
-    const age = Math.min(11, Math.max(3, val('age')));
-    const { daily, lo, hi, times, sugar } = kidSnack(age, val('girl') === 1);
-    show('main', `${fix(lo)}~${fix(hi)}kcal`);
-    show('sub', `만 ${fix(age)}세 · 하루 열량의 10~15%`);
+  snack() {
+    const who = root.dataset.who;
+    // 여성·남성 페이지에는 성별 칸이 없다
+    const girl = root.querySelector('[data-in="girl"]') ? val('girl') === 1 : false;
+    const { age, daily, lo, hi, times, sugar } = snackBudget(who, val('age'), girl);
+    const range = (a, b, unit) => (a === b ? `${fix(b, unit ? 1 : 0)}${unit || 'kcal'}` : `${fix(a, unit ? 1 : 0)}~${fix(b, unit ? 1 : 0)}${unit || 'kcal'}`);
+    show('main', lo === hi ? `${fix(hi)}kcal 안쪽` : range(lo, hi));
+    show('sub', `만 ${fix(age)}세 · 하루 열량의 ${who === 'kids' ? '10~15' : '10'}%`);
     show('daily', `${fix(daily)}kcal`);
-    show('times', times === 2 ? '오전·오후 2번' : '하루 1~2번');
-    show('per', `${fix(lo / times)}~${fix(hi / times)}kcal`);
+    show('times', who !== 'kids' ? '하루 1번 안팎' : times === 2 ? '오전·오후 2번' : '하루 1~2번');
+    show('per', range(lo / times, hi / times));
     show('sugar', `${fix(sugar)}g 미만 (각설탕 약 ${fix(sugar / 3)}개)`);
-    for (const [k, [, kcal, unit]] of Object.entries(KID_FOODS)) show(k, `${fix(lo / kcal, 1)}~${fix(hi / kcal, 1)}${unit}`);
+    for (const k of SNACK_WHO[who].foods) show(k, range(lo / FOODS[k][1], hi / FOODS[k][1], FOODS[k][2]));
   },
   score() {
     const h = homelessScore(val('homeless'), val('owner'));
