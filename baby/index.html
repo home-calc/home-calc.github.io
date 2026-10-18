@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아기 개월 수 계산기 – 오늘 몇 개월, 백일·돌·1000일 날짜</title>
+<meta name="description" content="아기 생년월일을 넣으면 오늘 만 몇 개월 며칠인지, 태어난 지 며칠째인지, 50일·백일·200일·돌·1000일 날짜와 지금 이유식 단계를 계산합니다.">
+<meta property="og:title" content="아기 개월 수 계산기 – 오늘 몇 개월, 백일·돌·1000일 날짜">
+<meta property="og:description" content="아기 생년월일을 넣으면 오늘 만 몇 개월 며칠인지, 태어난 지 며칠째인지, 50일·백일·200일·돌·1000일 날짜와 지금 이유식 단계를 계산합니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/baby/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/baby/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>육아 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">사료량</a><a href="/baby/" aria-current="page">육아</a><a href="/invest/">공모주·배당</a><a href="/housing/">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<h1>아기 개월 수 계산기</h1>
+<p class="lead">생년월일을 넣으면 오늘 만 몇 개월 며칠인지와 백일, 돌 같은 기념일 날짜를 알려 줍니다. 백일은 태어난 날을 1일째로 세는 우리나라 방식으로 계산합니다.</p>
+</div>
+</section>
+<div class="calc" data-tool="babyage" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-birth">아기 생년월일</label><input id="in-birth" data-in="birth" data-raw type="date" value="2026-01-01"></div>
+<div><label for="in-today">기준일 (보통 오늘)</label><input id="in-today" data-in="today" data-raw type="date" value="2026-10-18"></div>
+<p class="hint full">병원이나 예방접종 일정은 보통 "만 개월"로 말합니다. 생후 2개월은 태어나고 꽉 찬 두 달이 지난 때입니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">우리 아기는 지금</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>태어난 지</dt><dd data-out="count">-</dd></div><div><dt>이유식 단계</dt><dd data-out="stage">-</dd></div><div><dt>50일</dt><dd data-out="m0">-</dd></div><div><dt>100일 (백일)</dt><dd data-out="m1">-</dd></div><div><dt>200일</dt><dd data-out="m2">-</dd></div><div><dt>300일</dt><dd data-out="m3">-</dd></div><div><dt>첫돌</dt><dd data-out="m4">-</dd></div><div><dt>500일</dt><dd data-out="m5">-</dd></div><div><dt>두 돌</dt><dd data-out="m6">-</dd></div><div><dt>1000일</dt><dd data-out="m7">-</dd></div></dl>
+</div>
+</section>
+</div>
+
+<section>
+<h2>개월 수별 이유식 단계</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">단계</th><th scope="col">이렇게 먹어요</th></tr></thead>
+<tbody>
+<tr><th scope="row">0~4개월</th><td data-l="0">수유기</td><td data-l="0">모유나 분유만 먹습니다. 물이나 과즙도 따로 줄 필요가 없습니다.</td></tr>
+<tr><th scope="row">4~7개월</th><td data-l="0">초기 이유식</td><td data-l="0">생후 4~6개월 사이, 보통 6개월 무렵 쌀미음부터 하루 1번 시작합니다. 철분 보충을 위해 소고기를 일찍 넣습니다.</td></tr>
+<tr><th scope="row">7~9개월</th><td data-l="0">중기 이유식</td><td data-l="0">알갱이가 있는 죽으로 하루 2번. 혀로 으깰 수 있는 정도의 굳기입니다.</td></tr>
+<tr><th scope="row">9~12개월</th><td data-l="0">후기 이유식</td><td data-l="0">무른 밥 형태로 하루 3번. 잇몸으로 씹을 수 있는 정도입니다.</td></tr>
+<tr><th scope="row">12개월 이후</th><td data-l="0">완료기 (유아식)</td><td data-l="0">어른 밥보다 부드럽고 싱겁게, 하루 3끼와 간식 1~2번. 생우유를 시작할 수 있습니다.</td></tr>
+</tbody>
+</table></div>
+<p class="note">만 개월 기준입니다. 이유식은 아기 발달에 맞춰 시작 시기와 속도를 조절하고, 생후 4개월 전에는 시작하지 않습니다.</p>
+</section>
+
+<section>
+<h2>알아둘 점</h2>
+<ol class="tips">
+<li>백일과 1000일은 태어난 날을 1일째로 셉니다. 그래서 백일은 태어난 날에서 99일 뒤입니다.</li>
+<li>돌(첫 생일)은 날짜로 셉니다. 2026년 1월 1일에 태어났다면 2027년 1월 1일이 돌입니다.</li>
+<li>일찍 태어난 아기(37주 전)는 발달을 볼 때 예정일에서 센 "교정 연령"을 함께 봅니다. 예정일을 생년월일 칸에 넣으면 교정 연령이 나옵니다.</li>
+</ol>
+</section>
+
+
+<section>
+<h2>다른 육아 계산기</h2>
+<ul class="pages">
+<li><a href="/baby/formula/"><span><b>분유량 계산기</b><small>몸무게와 개월 수로 하루·한 번 수유량</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>흔히 쓰는 기준으로 계산한 어림값입니다. 아기마다 먹는 양과 발달 속도가 다르니, 몸무게가 잘 늘고 있는지 보며 조절하고 궁금한 점은 소아청소년과에서 상담하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js"></script>
+</body>
+</html>

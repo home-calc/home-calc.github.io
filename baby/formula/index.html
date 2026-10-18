@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>분유량 계산기 – 몸무게·개월 수별 하루 분유 수유량(ml)</title>
+<meta name="description" content="아기 몸무게와 개월 수를 넣으면 하루 분유 총량과 한 번에 먹일 양, 하루 수유 횟수를 계산합니다. 몸무게별 분유량 표도 함께 봅니다.">
+<meta property="og:title" content="분유량 계산기 – 몸무게·개월 수별 하루 분유 수유량(ml)">
+<meta property="og:description" content="아기 몸무게와 개월 수를 넣으면 하루 분유 총량과 한 번에 먹일 양, 하루 수유 횟수를 계산합니다. 몸무게별 분유량 표도 함께 봅니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/baby/formula/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/baby/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>육아 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">사료량</a><a href="/baby/" aria-current="page">육아</a><a href="/invest/">공모주·배당</a><a href="/housing/">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/baby/">육아 계산기</a></p>
+<h1>분유량 계산기</h1>
+<p class="lead">몸무게 1kg당 하루 약 150ml를 기준으로 하루 분유량과 한 번에 먹일 양을 계산합니다. 아기가 배고파하거나 남기는 정도를 보고 조절하세요.</p>
+</div>
+</section>
+<div class="calc" data-tool="formula" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-kg">아기 몸무게</label><span class="unit"><input id="in-kg" data-in="kg" type="number" inputmode="decimal" min="0" step="0.1" value="5"><em>kg</em></span></div>
+<div><label for="in-months">만 개월 수</label><span class="unit"><input id="in-months" data-in="months" type="number" inputmode="numeric" min="0" max="24" step="1" value="2"><em>개월</em></span></div>
+<p class="hint full">개월 수를 모르면 아기 개월 수 계산기에서 먼저 확인하세요. 이유식을 시작한 뒤에는 분유량이 조금씩 줄어듭니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">하루 분유량</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>하루 수유 횟수</dt><dd data-out="times">-</dd></div><div><dt>한 번에 먹일 양</dt><dd data-out="per">-</dd></div></dl>
+</div>
+</section>
+</div>
+
+
+<section>
+<h2>몸무게·개월 수별 하루 분유량</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">하루 총량</th><th scope="col">한 번에 (횟수)</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=3">3kg · 0개월</button></th><td data-l="0">450ml</td><td data-l="0">56ml (8번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=4">4kg · 1개월</button></th><td data-l="0">600ml</td><td data-l="0">86ml (7번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=5">5kg · 2개월</button></th><td data-l="0">750ml</td><td data-l="0">125ml (6번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=6">6kg · 3개월</button></th><td data-l="0">900ml</td><td data-l="0">150ml (6번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=7">7kg · 4개월</button></th><td data-l="0">1,000ml</td><td data-l="0">200ml (5번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=8">8kg · 6개월</button></th><td data-l="0">800ml</td><td data-l="0">200ml (4번)</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=9">9kg · 9개월</button></th><td data-l="0">800ml</td><td data-l="0">200ml (4번)</td></tr>
+</tbody>
+</table></div>
+<p class="note">하루 총량은 몸무게 × 150ml, 많아도 1,000ml 안쪽으로 잡고, 6개월부터는 이유식과 함께 800ml 안쪽으로 계산했습니다. 몸무게를 누르면 위 계산기에 들어갑니다.</p>
+</section>
+
+<section>
+<h2>개월 수별 하루 수유 횟수</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">하루 횟수</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="months=0">0~1개월</button></th><td data-l="0">8번 안팎</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="months=1">1~2개월</button></th><td data-l="0">7번 안팎</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="months=2">2~4개월</button></th><td data-l="0">6번 안팎</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="months=4">4~6개월</button></th><td data-l="0">5번 안팎</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="months=6">6~12개월</button></th><td data-l="0">4번 안팎</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section>
+<h2>먹일 때 알아둘 점</h2>
+<ol class="tips">
+<li>분유 통에 적힌 물 양과 가루 스푼 수를 지켜 타세요. 진하게 타면 탈수나 변비가 생길 수 있습니다.</li>
+<li>먹는 양은 날마다 들쭉날쭉합니다. 하루 이틀보다 한 주 동안 몸무게가 늘고 있는지를 보세요.</li>
+<li>탄 분유는 실온에서 1~2시간 안에 먹이고 남은 것은 버리세요. 먹다 남은 분유를 다음에 다시 먹이지 않습니다.</li>
+<li>모유와 함께 먹이는 혼합수유라면 계산값에서 모유로 먹는 양만큼 줄여 주세요.</li>
+</ol>
+</section>
+
+
+<section>
+<h2>다른 육아 계산기</h2>
+<ul class="pages">
+<li><a href="/baby/"><span><b>아기 개월 수 계산기</b><small>오늘 몇 개월 며칠, 백일·돌 날짜</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>흔히 쓰는 기준으로 계산한 어림값입니다. 아기마다 먹는 양과 발달 속도가 다르니, 몸무게가 잘 늘고 있는지 보며 조절하고 궁금한 점은 소아청소년과에서 상담하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js"></script>
+</body>
+</html>

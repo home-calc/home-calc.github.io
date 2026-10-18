@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>청약 가점 계산기 – 무주택 기간·부양가족·청약통장 84점 만점</title>
+<meta name="description" content="무주택 기간, 부양가족 수, 청약통장 가입 기간을 넣으면 아파트 청약 가점(84점 만점)을 계산합니다. 항목별 점수표와 최근 단지별 당첨 가점 정리도 함께 봅니다.">
+<meta property="og:title" content="청약 가점 계산기 – 무주택 기간·부양가족·청약통장 84점 만점">
+<meta property="og:description" content="무주택 기간, 부양가족 수, 청약통장 가입 기간을 넣으면 아파트 청약 가점(84점 만점)을 계산합니다. 항목별 점수표와 최근 단지별 당첨 가점 정리도 함께 봅니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/housing/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/housing/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>청약 가점 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">사료량</a><a href="/baby/">육아</a><a href="/invest/">공모주·배당</a><a href="/housing/" aria-current="page">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<h1>청약 가점 계산기</h1>
+<p class="lead">민영 아파트 청약의 가점은 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점)을 더한 84점 만점입니다. 내 점수를 계산하고 단지별 당첨 가점과 비교해 보세요.</p>
+</div>
+</section>
+<div class="calc" data-tool="score" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-homeless">무주택 기간</label><span class="unit"><input id="in-homeless" data-in="homeless" type="number" inputmode="decimal" min="0" step="1" value="5"><em>년</em></span></div>
+<div><label for="in-owner">집이 있나요?</label><label class="check"><input id="in-owner" data-in="owner" type="checkbox"> 세대원 중 주택 소유자가 있음</label></div>
+<div><label for="in-dependents">부양가족 수 (본인 제외)</label><span class="unit"><input id="in-dependents" data-in="dependents" type="number" inputmode="numeric" min="0" step="1" value="2"><em>명</em></span></div>
+<div><label for="in-account">청약통장 가입 기간</label><span class="unit"><input id="in-account" data-in="account" type="number" inputmode="decimal" min="0" step="0.5" value="7"><em>년</em></span></div>
+<p class="hint full">무주택 기간은 만 30세가 된 날과 혼인신고일 가운데 빠른 날부터 셉니다. 그 전에 결혼하지 않았으면 만 30세부터입니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">내 청약 가점</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>무주택 기간</dt><dd data-out="h">-</dd></div><div><dt>부양가족 수</dt><dd data-out="d">-</dd></div><div><dt>청약통장 가입 기간</dt><dd data-out="a">-</dd></div></dl>
+</div>
+</section>
+</div>
+
+<section>
+<h2>무주택 기간 점수 (최대 32점)</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">점수</th></tr></thead>
+<tbody>
+<tr><th scope="row">1년 미만</th><td data-l="0">2점</td></tr>
+<tr><th scope="row">1년 이상 ~ 2년 미만</th><td data-l="0">4점</td></tr>
+<tr><th scope="row">2년 이상 ~ 3년 미만</th><td data-l="0">6점</td></tr>
+<tr><th scope="row">3년 이상 ~ 4년 미만</th><td data-l="0">8점</td></tr>
+<tr><th scope="row">5년 이상 ~ 6년 미만</th><td data-l="0">12점</td></tr>
+<tr><th scope="row">7년 이상 ~ 8년 미만</th><td data-l="0">16점</td></tr>
+<tr><th scope="row">10년 이상 ~ 11년 미만</th><td data-l="0">22점</td></tr>
+<tr><th scope="row">14년 이상 ~ 15년 미만</th><td data-l="0">30점</td></tr>
+<tr><th scope="row">15년 이상</th><td data-l="0">32점</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section>
+<h2>부양가족 수 점수 (최대 35점)</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">점수</th></tr></thead>
+<tbody>
+<tr><th scope="row">0명</th><td data-l="0">5점</td></tr>
+<tr><th scope="row">1명</th><td data-l="0">10점</td></tr>
+<tr><th scope="row">2명</th><td data-l="0">15점</td></tr>
+<tr><th scope="row">3명</th><td data-l="0">20점</td></tr>
+<tr><th scope="row">4명</th><td data-l="0">25점</td></tr>
+<tr><th scope="row">5명</th><td data-l="0">30점</td></tr>
+<tr><th scope="row">6명 이상</th><td data-l="0">35점</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section>
+<h2>청약통장 가입 기간 점수 (최대 17점)</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">점수</th></tr></thead>
+<tbody>
+<tr><th scope="row">6개월 미만</th><td data-l="0">1점</td></tr>
+<tr><th scope="row">6개월 ~ 1년 미만</th><td data-l="0">2점</td></tr>
+<tr><th scope="row">1년 이상 ~ 2년 미만</th><td data-l="0">3점</td></tr>
+<tr><th scope="row">2년 이상 ~ 3년 미만</th><td data-l="0">4점</td></tr>
+<tr><th scope="row">5년 이상 ~ 6년 미만</th><td data-l="0">7점</td></tr>
+<tr><th scope="row">10년 이상 ~ 11년 미만</th><td data-l="0">12점</td></tr>
+<tr><th scope="row">14년 이상 ~ 15년 미만</th><td data-l="0">16점</td></tr>
+<tr><th scope="row">15년 이상</th><td data-l="0">17점</td></tr>
+</tbody>
+</table></div>
+</section>
+
+<section>
+<h2>계산할 때 알아둘 점</h2>
+<ol class="tips">
+<li>부양가족은 주민등록상 같은 세대인 배우자, 자녀, 3년 이상 같이 산 직계존속(부모·조부모)입니다. 배우자가 따로 살아도 부양가족으로 셉니다.</li>
+<li>세대원 가운데 한 명이라도 집이 있으면 무주택 기간은 0점입니다. 다만 60㎡ 이하 소형·저가 주택 등은 무주택으로 보는 예외가 있습니다.</li>
+<li>전용 85㎡ 이하 민영주택은 투기과열지구·조정대상지역에서 가점제 비율이 높습니다. 지역과 면적에 따라 가점제·추첨제 비율이 달라집니다.</li>
+<li>가점을 부풀려 당첨되면 당첨이 취소되고 일정 기간 청약할 수 없습니다. 청약홈에서 자동 계산된 항목을 꼭 확인하세요.</li>
+</ol>
+</section>
+<section>
+<h2>최근 아파트 청약 정리</h2>
+<ul class="pages">
+<li><a href="https://lastlaugher.tistory.com/56" target="_blank" rel="noopener"><span><b>아산 그랑시티필하우스 청약 총정리</b><small>분양가 4.8억~6.2억, 특별공급 10월 19일, 당첨자 발표 10월 27일</small></span></a></li>
+<li><a href="https://lastlaugher.tistory.com/57" target="_blank" rel="noopener"><span><b>인천 부평 산곡역자이힐스테이트앤하늘채 청약 총정리</b><small>분양가 5.6억~10.3억, 특별공급 10월 19일, 당첨자 발표 10월 27일</small></span></a></li>
+</ul>
+<p class="note">단지별 분양가, 경쟁률, 당첨 가점 커트라인은 블로그에 청약 일정마다 정리합니다.</p>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>민영주택 가점제 기준(84점 만점)의 계산입니다. 무주택 기간 산정, 부양가족 인정, 소형·저가 주택 예외 같은 세부 기준은 입주자모집공고문과 청약홈에서 확인하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js"></script>
+</body>
+</html>

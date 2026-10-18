@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공모주 청약 계산기 – 균등배정·비례배정 주수와 증거금</title>
+<meta name="description" content="공모가와 증거금, 증권사 배정 물량, 청약 건수, 비례 경쟁률을 넣으면 균등배정·비례배정으로 받을 주식 수와 필요한 증거금, 환불금을 계산합니다.">
+<meta property="og:title" content="공모주 청약 계산기 – 균등배정·비례배정 주수와 증거금">
+<meta property="og:description" content="공모가와 증거금, 증권사 배정 물량, 청약 건수, 비례 경쟁률을 넣으면 균등배정·비례배정으로 받을 주식 수와 필요한 증거금, 환불금을 계산합니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/invest/ipo/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/invest/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>공모주·배당 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">사료량</a><a href="/baby/">육아</a><a href="/invest/" aria-current="page">공모주·배당</a><a href="/housing/">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/invest/">공모주·배당 계산기</a></p>
+<h1>공모주 청약 계산기</h1>
+<p class="lead">증거금을 얼마 넣으면 몇 주를 청약할 수 있고, 경쟁률이 이 정도면 균등·비례로 몇 주를 받는지 계산합니다. 청약 건수와 비례 경쟁률은 청약 마감 뒤 증권사가 발표한 값을 넣으면 실제 결과에 가까워집니다.</p>
+</div>
+</section>
+<div class="calc" data-tool="ipo" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-price">확정 공모가</label><span class="unit"><input id="in-price" data-in="price" type="number" inputmode="numeric" min="0" step="100" value="20000"><em>원</em></span></div>
+<div><label for="in-rate">증거금률</label><span class="unit"><input id="in-rate" data-in="rate" type="number" inputmode="numeric" min="0" max="100" step="10" value="50"><em>%</em></span></div>
+<div><label for="in-deposit">넣을 증거금</label><span class="unit"><input id="in-deposit" data-in="deposit" type="number" inputmode="numeric" min="0" step="10000" value="1000000"><em>원</em></span></div>
+<div><label for="in-min">최소 청약 수량</label><span class="unit"><input id="in-min" data-in="min" type="number" inputmode="numeric" min="0" step="10" value="10"><em>주</em></span></div>
+<div><label for="in-allot">증권사 일반 배정 물량</label><span class="unit"><input id="in-allot" data-in="allot" type="number" inputmode="numeric" min="0" step="1000" value="300000"><em>주</em></span></div>
+<div><label for="in-accounts">청약 건수 (예상)</label><span class="unit"><input id="in-accounts" data-in="accounts" type="number" inputmode="numeric" min="0" step="1000" value="100000"><em>건</em></span></div>
+<div><label for="in-ratio">비례 경쟁률 (예상)</label><span class="unit"><input id="in-ratio" data-in="ratio" type="number" inputmode="numeric" min="0" step="100" value="1500"><em>대 1</em></span></div>
+<p class="hint full">일반 배정 물량은 투자설명서의 "증권사별 일반청약자 배정 물량"입니다. 절반이 균등, 절반이 비례로 나뉩니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">예상 배정 주식 수</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>청약 주수</dt><dd data-out="shares">-</dd></div><div><dt>균등 배정</dt><dd data-out="equal">-</dd></div><div><dt>비례 배정</dt><dd data-out="prop">-</dd></div><div><dt>최소 청약 증거금</dt><dd data-out="mindep">-</dd></div><div><dt>납입할 금액</dt><dd data-out="pay">-</dd></div><div><dt>환불받을 금액</dt><dd data-out="refund">-</dd></div></dl>
+</div>
+</section>
+</div>
+
+<section>
+<h2>증거금·비례 경쟁률별 비례 배정 주수</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">증거금 100만 원</th><th scope="col">증거금 1,000만 원</th><th scope="col">증거금 5,000만 원</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="ratio=300">300대 1</button></th><td data-l="0">0.33주</td><td data-l="0">3.33주</td><td data-l="0">16.67주</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="ratio=500">500대 1</button></th><td data-l="0">0.2주</td><td data-l="0">2주</td><td data-l="0">10주</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="ratio=1000">1,000대 1</button></th><td data-l="0">0.1주</td><td data-l="0">1주</td><td data-l="0">5주</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="ratio=2000">2,000대 1</button></th><td data-l="0">0.05주</td><td data-l="0">0.5주</td><td data-l="0">2.5주</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="ratio=3000">3,000대 1</button></th><td data-l="0">0.03주</td><td data-l="0">0.33주</td><td data-l="0">1.67주</td></tr>
+</tbody>
+</table></div>
+<p class="note">공모가 20,000원, 증거금률 50%(1주당 10,000원) 기준입니다. 1주 미만은 증권사 방식에 따라 버리거나 추첨합니다. 경쟁률을 누르면 위 계산기에 들어갑니다.</p>
+</section>
+
+<section>
+<h2>계산할 때 알아둘 점</h2>
+<ol class="tips">
+<li>균등 배정은 최소 청약 수량 이상만 넣으면 증거금과 상관없이 똑같이 받습니다. 균등 물량(일반 배정의 절반)을 청약 건수로 나눈 값이 1주 미만이면 추첨으로 1주를 받거나 못 받습니다.</li>
+<li>비례 배정은 청약한 주식 수에 비례합니다. 비례 경쟁률이 1,000대 1이면 1,000주를 청약해야 약 1주를 받는다는 뜻입니다.</li>
+<li>증거금률 50%는 청약 금액의 절반만 미리 낸다는 뜻입니다. 배정받은 주식값(공모가 × 배정 주수)만 빠지고 나머지는 환불일에 돌아옵니다.</li>
+<li>같은 종목을 여러 증권사에서 중복 청약할 수 없습니다. 증권사마다 계좌 개설 기간 제한과 청약 수수료가 다르니 미리 확인하세요.</li>
+</ol>
+</section>
+<section>
+<h2>최근 공모주 청약·상장 정리</h2>
+<ul class="pages">
+<li><a href="https://lastlaugher.tistory.com/52" target="_blank" rel="noopener"><span><b>멜콘(MELCON·구 에스앤에프솔루션) 상장일 총정리</b><small>공모가 12,300원, 따따블 49,200원, 유통물량 34.5%</small></span></a></li>
+<li><a href="https://lastlaugher.tistory.com/53" target="_blank" rel="noopener"><span><b>진코스텍(Jincostech) 코스닥 상장일 총정리</b><small>공모가 23,500원, 따따블 94,000원, 유통물량 58.44%</small></span></a></li>
+<li><a href="https://lastlaugher.tistory.com/51" target="_blank" rel="noopener"><span><b>디티에스(DTS·구 동양티에스) 공모주 청약 결과</b><small>균등배정 1.18주(대신증권), 비례 경쟁률 1,997대 1, 상장일 10월 23일</small></span></a></li>
+</ul>
+<p class="note">종목별 증권사 물량, 경쟁률, 실제 배정 결과는 블로그에 정리합니다.</p>
+</section>
+
+<section>
+<h2>다른 계산기</h2>
+<ul class="pages">
+<li><a href="/invest/listing/"><span><b>공모주 상장일 손익 계산기</b><small>따따블 가격과 공모가 대비 손익</small></span></a></li>
+<li><a href="/invest/dividend/"><span><b>배당금 계산기</b><small>배당기준일로 매수 마감일·배당락일과 세후 배당금</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>공모주 배정과 배당금은 증권사 배정 방식, 세금, 수수료에 따라 실제와 조금 다를 수 있는 예상값입니다. 투자 판단은 투자설명서와 공시를 확인하고 스스로 하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js"></script>
+</body>
+</html>

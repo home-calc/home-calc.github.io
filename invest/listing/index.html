@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공모주 상장일 손익 계산기 – 따따블 가격과 공모가 대비 수익</title>
+<meta name="description" content="공모가와 배정받은 주식 수, 매도할 가격을 넣으면 상장일 손익과 수익률을 계산합니다. 따따블(공모가 4배) 가격과 하한가(60%)도 함께 봅니다.">
+<meta property="og:title" content="공모주 상장일 손익 계산기 – 따따블 가격과 공모가 대비 수익">
+<meta property="og:description" content="공모가와 배정받은 주식 수, 매도할 가격을 넣으면 상장일 손익과 수익률을 계산합니다. 따따블(공모가 4배) 가격과 하한가(60%)도 함께 봅니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/invest/listing/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/invest/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>공모주·배당 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/">사료량</a><a href="/baby/">육아</a><a href="/invest/" aria-current="page">공모주·배당</a><a href="/housing/">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/invest/">공모주·배당 계산기</a></p>
+<h1>공모주 상장일 손익 계산기</h1>
+<p class="lead">배정받은 공모주를 얼마에 팔면 얼마가 남는지 계산합니다. 상장일에는 공모가의 60%에서 400%(따따블)까지 움직일 수 있습니다.</p>
+</div>
+</section>
+<div class="calc" data-tool="listing" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-price">공모가</label><span class="unit"><input id="in-price" data-in="price" type="number" inputmode="numeric" min="0" step="100" value="20000"><em>원</em></span></div>
+<div><label for="in-qty">배정받은 주식 수</label><span class="unit"><input id="in-qty" data-in="qty" type="number" inputmode="numeric" min="0" step="1" value="2"><em>주</em></span></div>
+<div><label for="in-sell">팔 가격</label><span class="unit"><input id="in-sell" data-in="sell" type="number" inputmode="numeric" min="0" step="100" value="40000"><em>원</em></span></div>
+<p class="hint full">매도할 때 붙는 증권거래세와 수수료는 빼지 않은 금액입니다. 실제로는 조금 적게 남습니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">상장일 손익</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>공모가 대비</dt><dd data-out="pct">-</dd></div><div><dt>따따블 가격 (4배)</dt><dd data-out="max">-</dd></div><div><dt>따블 가격 (2배)</dt><dd data-out="double">-</dd></div><div><dt>하한 가격 (60%)</dt><dd data-out="min">-</dd></div></dl>
+</div>
+</section>
+</div>
+
+<section>
+<h2>공모가 대비 가격별 손익</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">가격</th><th scope="col">1주 손익</th><th scope="col">10주 손익</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=12000">60%</button></th><td data-l="0">12,000원</td><td data-l="0">-8,000원</td><td data-l="0">-80,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=16000">80%</button></th><td data-l="0">16,000원</td><td data-l="0">-4,000원</td><td data-l="0">-40,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=20000">100%</button></th><td data-l="0">20,000원</td><td data-l="0">0원</td><td data-l="0">0원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=26000">130%</button></th><td data-l="0">26,000원</td><td data-l="0">6,000원</td><td data-l="0">60,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=30000">150%</button></th><td data-l="0">30,000원</td><td data-l="0">10,000원</td><td data-l="0">100,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=40000">200% (따블)</button></th><td data-l="0">40,000원</td><td data-l="0">20,000원</td><td data-l="0">200,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=60000">300%</button></th><td data-l="0">60,000원</td><td data-l="0">40,000원</td><td data-l="0">400,000원</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="sell=80000">400% (따따블)</button></th><td data-l="0">80,000원</td><td data-l="0">60,000원</td><td data-l="0">600,000원</td></tr>
+</tbody>
+</table></div>
+<p class="note">공모가 20,000원 기준입니다. 줄을 누르면 그 가격이 위 계산기에 들어갑니다.</p>
+</section>
+
+<section>
+<h2>상장일에 알아둘 점</h2>
+<ol class="tips">
+<li>시초가는 상장일 아침 8시 30분부터 9시까지 동시호가로 정해지고, 2023년 6월부터는 공모가의 60%~400% 안에서 정해집니다.</li>
+<li>상장일에는 장중에도 공모가의 60%~400% 범위 안에서만 거래됩니다. "시초가 기준 위아래 30%"는 예전 규칙입니다.</li>
+<li>배정받은 주식은 상장일 아침에 계좌에 들어옵니다. 매도 주문은 동시호가 시간부터 넣을 수 있습니다.</li>
+</ol>
+</section>
+<section>
+<h2>최근 공모주 청약·상장 정리</h2>
+<ul class="pages">
+<li><a href="https://lastlaugher.tistory.com/52" target="_blank" rel="noopener"><span><b>멜콘(MELCON·구 에스앤에프솔루션) 상장일 총정리</b><small>공모가 12,300원, 따따블 49,200원, 유통물량 34.5%</small></span></a></li>
+<li><a href="https://lastlaugher.tistory.com/53" target="_blank" rel="noopener"><span><b>진코스텍(Jincostech) 코스닥 상장일 총정리</b><small>공모가 23,500원, 따따블 94,000원, 유통물량 58.44%</small></span></a></li>
+<li><a href="https://lastlaugher.tistory.com/51" target="_blank" rel="noopener"><span><b>디티에스(DTS·구 동양티에스) 공모주 청약 결과</b><small>균등배정 1.18주(대신증권), 비례 경쟁률 1,997대 1, 상장일 10월 23일</small></span></a></li>
+</ul>
+<p class="note">종목별 증권사 물량, 경쟁률, 실제 배정 결과는 블로그에 정리합니다.</p>
+</section>
+
+<section>
+<h2>다른 계산기</h2>
+<ul class="pages">
+<li><a href="/invest/ipo/"><span><b>공모주 청약 계산기</b><small>균등·비례 배정 주수와 필요한 증거금</small></span></a></li>
+<li><a href="/invest/dividend/"><span><b>배당금 계산기</b><small>배당기준일로 매수 마감일·배당락일과 세후 배당금</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>공모주 배정과 배당금은 증권사 배정 방식, 세금, 수수료에 따라 실제와 조금 다를 수 있는 예상값입니다. 투자 판단은 투자설명서와 공시를 확인하고 스스로 하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js"></script>
+</body>
+</html>
