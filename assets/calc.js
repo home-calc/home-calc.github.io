@@ -1,4 +1,4 @@
-import { TARIFF, addedCost, applianceKwh, seasonOfMonth, tierOf } from './tariff.js';
+import { TARIFF, addedCost, applianceKwh, seasonOfMonth, tierOf } from './tariff.js?v=1c3b8fb5';
 
 const data = JSON.parse(document.getElementById('calc-data').textContent);
 const $ = (id) => document.getElementById(id);

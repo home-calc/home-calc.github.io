@@ -1,9 +1,9 @@
 // 평수별 가전 용량, TV 시청 거리, 사료 급여량, 공모주·배당, 청약 가점, 도시가스 요금, 육아 계산기의 브라우저 동작.
 // 입력은 [data-in="이름"], 결과는 [data-out="이름"] 으로 찾는다.
-import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js';
-import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js';
-import { gasBill } from './gas-rules.js';
-import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js';
+import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=1c3b8fb5';
+import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=1c3b8fb5';
+import { gasBill } from './gas-rules.js?v=1c3b8fb5';
+import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=1c3b8fb5';
 
 const root = document.querySelector('[data-tool]');
 const val = (name) => {
