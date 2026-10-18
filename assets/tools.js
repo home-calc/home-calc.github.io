@@ -1,9 +1,10 @@
 // 평수별 가전 용량, TV 시청 거리, 사료 급여량, 공모주·배당, 청약 가점, 도시가스 요금, 육아 계산기의 브라우저 동작.
 // 입력은 [data-in="이름"], 결과는 [data-out="이름"] 으로 찾는다.
-import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=1c3b8fb5';
-import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=1c3b8fb5';
-import { gasBill } from './gas-rules.js?v=1c3b8fb5';
-import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=1c3b8fb5';
+import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=6bb900fa';
+import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=6bb900fa';
+import { gasBill } from './gas-rules.js?v=6bb900fa';
+import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=6bb900fa';
+import { ACTIVITY, DIET_CUT, FOODS, KID_FOODS, husband, kidSnack, maleEer } from './snack-rules.js?v=6bb900fa';
 
 const root = document.querySelector('[data-tool]');
 const val = (name) => {
@@ -139,6 +140,32 @@ Object.assign(tools, {
     show('sub', `몸무게 ${fix(val('kg'), 1)}kg · 만 ${fix(val('months'))}개월`);
     show('times', `${times}번 안팎`);
     show('per', `약 ${fix(Math.round(perFeed / 10) * 10)}ml`);
+  },
+  husband() {
+    const age = val('age');
+    const { bmr, daily, diet, snack } = husband(val('kg'), val('cm'), age, ACTIVITY[val('act')][1]);
+    const times = (k) => fix(daily / FOODS[k][1], 1);
+    show('main', `${fix(daily)}kcal`);
+    show('sub', `밥으로 치면 약 ${times('rice')}공기`);
+    show('bmr', `${fix(bmr)}kcal`);
+    show('eer', `${fix(maleEer(age))}kcal`);
+    show('rice', `${times('rice')}공기`);
+    show('pork', `${times('pork')}인분`);
+    show('ramen', `${times('ramen')}봉지`);
+    show('chicken', `${times('chicken')}마리`);
+    show('diet', `${fix(diet)}kcal (−${fix(DIET_CUT)})`);
+    show('snack', `${fix(snack)}kcal · 견과 ${fix(snack / FOODS.nuts[1], 1)}봉`);
+  },
+  kidsnack() {
+    const age = Math.min(11, Math.max(3, val('age')));
+    const { daily, lo, hi, times, sugar } = kidSnack(age, val('girl') === 1);
+    show('main', `${fix(lo)}~${fix(hi)}kcal`);
+    show('sub', `만 ${fix(age)}세 · 하루 열량의 10~15%`);
+    show('daily', `${fix(daily)}kcal`);
+    show('times', times === 2 ? '오전·오후 2번' : '하루 1~2번');
+    show('per', `${fix(lo / times)}~${fix(hi / times)}kcal`);
+    show('sugar', `${fix(sugar)}g 미만 (각설탕 약 ${fix(sugar / 3)}개)`);
+    for (const [k, [, kcal, unit]] of Object.entries(KID_FOODS)) show(k, `${fix(lo / kcal, 1)}~${fix(hi / kcal, 1)}${unit}`);
   },
   score() {
     const h = homelessScore(val('homeless'), val('owner'));

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>남편 사료 계산기 – 우리 집 남편 하루 사료량(kcal)</title>
+<meta name="description" content="나이·키·몸무게·활동량을 넣으면 남편에게 하루 얼마나 먹여야 하는지 열량(kcal)과 밥·삼겹살·라면·치킨으로 바꾼 양을 계산합니다. 재미로 만들었지만 계산은 기초대사량 공식을 따릅니다.">
+<meta property="og:title" content="남편 사료 계산기 – 우리 집 남편 하루 사료량(kcal)">
+<meta property="og:description" content="나이·키·몸무게·활동량을 넣으면 남편에게 하루 얼마나 먹여야 하는지 열량(kcal)과 밥·삼겹살·라면·치킨으로 바꾼 양을 계산합니다. 재미로 만들었지만 계산은 기초대사량 공식을 따릅니다.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://home-calc.github.io/pet/husband/">
+<meta name="naver-site-verification" content="09b50b31a19f573ffc3d160b60d45a1c7a62fc37">
+<meta name="google-site-verification" content="LOSXsZBOLtsS_0UJziLJOx76pGKAXK6D4Hu864cuCBM">
+<meta name="google-adsense-account" content="ca-pub-8045229464055968">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8045229464055968" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/assets/style.css?v=6bb900fa">
+</head>
+<body>
+<header class="site">
+<div class="wrap">
+<a class="logo" href="/pet/"><span class="mark"><svg viewBox="0 0 16 20" width="13" height="16" aria-hidden="true"><path d="M9.500 0L0 11.500h6L4.500 20 15 7.500H8.500z" fill="currentColor"/></svg></span>사료 급여량 계산기</a>
+<input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="메뉴 열기">
+<label for="menu-toggle" class="burger" aria-hidden="true"><i></i><i></i><i></i></label>
+<nav><a href="/">가전 전기요금</a><a href="/gas/">도시가스 요금</a><a href="/filter/">필터 찾기</a><a href="/size/">가전 용량</a><a href="/tv/">TV 시청 거리</a><a href="/pet/" aria-current="page">사료량</a><a href="/baby/">육아</a><a href="/invest/">공모주·배당</a><a href="/housing/">청약 가점</a></nav>
+</div>
+</header>
+<main class="wrap">
+<section class="hero plain">
+<div>
+<p class="crumb"><a href="/pet/">사료 급여량 계산기</a></p>
+<h1>남편 사료 계산기</h1>
+<p class="lead">우리 집 남편, 하루에 얼마나 먹여야 할까요? 나이·키·몸무게와 평소 움직이는 정도를 넣으면 하루 사료량을 열량으로 알려 드립니다. 밥 몇 공기, 삼겹살 몇 인분인지도 같이 봅니다.</p>
+</div>
+</section>
+<div class="calc" data-tool="husband" >
+<section class="panel" aria-label="계산기">
+<div class="fields">
+<div><label for="in-age">나이</label><span class="unit"><input id="in-age" data-in="age" type="number" inputmode="numeric" min="19" max="90" step="1" value="45"><em>세</em></span></div>
+<div><label for="in-cm">키</label><span class="unit"><input id="in-cm" data-in="cm" type="number" inputmode="decimal" min="0" step="1" value="174"><em>cm</em></span></div>
+<div><label for="in-kg">몸무게</label><span class="unit"><input id="in-kg" data-in="kg" type="number" inputmode="decimal" min="0" step="0.1" value="78"><em>kg</em></span></div>
+<div><label for="in-act">평소 활동량</label><select id="in-act" data-in="act"><option value="0">소파와 한 몸</option><option value="1">주 1~3번 운동</option><option value="2">주 3~5번 운동</option><option value="3">매일 운동·몸 쓰는 일</option></select></div>
+<p class="hint full">퇴근 후 소파에 누워 있는 시간이 길다면 맨 위 활동량을 고르세요. 솔직하게 고를수록 정확합니다.</p>
+</div>
+</section>
+<section class="receipt" aria-live="polite">
+<div class="paper">
+  <p class="r-title">하루 사료량</p>
+  <p class="r-big"><span data-out="main">-</span></p>
+  <p class="r-sub" data-out="sub"></p>
+  <dl><div><dt>기초대사량</dt><dd data-out="bmr">-</dd></div><div><dt>또래 남성 평균</dt><dd data-out="eer">-</dd></div><div><dt>밥 한 공기(210g)</dt><dd data-out="rice">-</dd></div><div><dt>삼겹살 1인분(200g)</dt><dd data-out="pork">-</dd></div><div><dt>라면 1봉지</dt><dd data-out="ramen">-</dd></div><div><dt>프라이드치킨 한 마리</dt><dd data-out="chicken">-</dd></div><div><dt>뱃살 관리 모드</dt><dd data-out="diet">-</dd></div><div><dt>간식 허용량</dt><dd data-out="snack">-</dd></div></dl>
+</div>
+</section>
+</div>
+<section class="shelf">
+<h2>남편 간식: 하루견과 추천</h2>
+<ul class="items">
+<li><a class="ph" href="https://link.coupang.com/a/hWrycxrBEO" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail11.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/2025/11/25/14/3/007c8d3f-ecf3-47f6-9622-8507ba1be248.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>이롬 갓구운 하루견과 30p</b><small>리뷰 66개</small><small class="price">26,620원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrycxrBEO" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWryA6SKK4" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://t2c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/0826/f3b835cb4a3f2b9b5d46795cc472fed0e1f928b55070f4f2d9deedb18118.png" alt="" loading="lazy"></a>
+<div class="what"><b>우고래빗 올웨이즈 하루견과</b><small>리뷰 8,354개</small><small class="price">37,900원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWryA6SKK4" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWryYO36iG" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail11.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/736a/97d0d4e22da7a70759de4e12a0e543acaeaa3ae754514457a677d03b611f.png" alt="" loading="lazy"></a>
+<div class="what"><b>우고래빗 피치오 하루견과</b><small>리뷰 182개</small><small class="price">37,050원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWryYO36iG" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWrzsCym28" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail5.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/308513359822038-d05e9981-3c5a-45b3-bbd1-55eb16ef51e4.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>투데이넛 너트한줌 요거트 견과세트 600g</b><small>리뷰 59,325개</small><small class="price">16,740원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrzsCym28" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+</ul>
+<p class="note">가격은 10월 18일 기준이며 지금 쿠팡 가격과 다를 수 있습니다. 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</section>
+
+<section>
+<h2>몸무게별 하루 사료량</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">소파와 한 몸</th><th scope="col">주 3~5번 운동</th></tr></thead>
+<tbody>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=60">60kg</button></th><td data-l="0">1,761kcal</td><td data-l="0">2,275kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=65">65kg</button></th><td data-l="0">1,821kcal</td><td data-l="0">2,352kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=70">70kg</button></th><td data-l="0">1,881kcal</td><td data-l="0">2,430kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=75">75kg</button></th><td data-l="0">1,941kcal</td><td data-l="0">2,507kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=80">80kg</button></th><td data-l="0">2,001kcal</td><td data-l="0">2,585kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=85">85kg</button></th><td data-l="0">2,061kcal</td><td data-l="0">2,662kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=90">90kg</button></th><td data-l="0">2,121kcal</td><td data-l="0">2,740kcal</td></tr>
+<tr><th scope="row"><button type="button" class="rowpick" data-set="kg=100">100kg</button></th><td data-l="0">2,241kcal</td><td data-l="0">2,895kcal</td></tr>
+</tbody>
+</table></div>
+<p class="note">45세, 키 174cm 기준입니다. 몸무게를 누르면 위 계산기에 그 값이 들어갑니다.</p>
+</section>
+
+<section>
+<h2>나이별 남성 하루 에너지 필요추정량</h2>
+<div class="scroll"><table class="heat">
+<thead><tr><td></td><th scope="col">하루 열량</th></tr></thead>
+<tbody>
+<tr><th scope="row">19~29세</th><td data-l="0">2,600kcal</td></tr>
+<tr><th scope="row">30~49세</th><td data-l="0">2,500kcal</td></tr>
+<tr><th scope="row">50~64세</th><td data-l="0">2,200kcal</td></tr>
+<tr><th scope="row">65~74세</th><td data-l="0">2,000kcal</td></tr>
+<tr><th scope="row">75세 이상</th><td data-l="0">1,900kcal</td></tr>
+</tbody>
+</table></div>
+<p class="note">보건복지부 2020 한국인 영양소 섭취기준. 보통 체격과 활동량을 가정한 평균값입니다.</p>
+</section>
+<section class="shelf">
+<h2>남편 간식: 육포·안주 추천</h2>
+<ul class="items">
+<li><a class="ph" href="https://link.coupang.com/a/hWrAxwPRzo" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://t1c.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/4ce9/3a58b9b29223b6251b63e1a478247e16c57c678a960c464aafbd38de83cd.png" alt="" loading="lazy"></a>
+<div class="what"><b>소고기함량 84 국내산 프리미엄 육포</b><small>리뷰 260개</small><small class="price">29,900원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrAxwPRzo" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWrAWFHcXY" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail11.coupangcdn.com/thumbnails/remote/212x212ex/image/vendor_inventory/images/00a2478e-894e-4715-8116-59ed1d9b34821544515854709857979.png" alt="" loading="lazy"></a>
+<div class="what"><b>40년 전통 육포장인의 정 수제 한우육포 since1977 14봉지 고단백 영양간식 육포유목민 정착템</b><small>리뷰 1,619개</small><small class="price">45,800원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrAWFHcXY" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWrBiOs0XI" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://thumbnail14.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/228388117055805-df06ca5d-c712-438c-b13f-53e2b049fe99.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>안주야 매콤쫄깃 육포</b><small>리뷰 625개</small><small class="price">10,800원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrBiOs0XI" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+<li><a class="ph" href="https://link.coupang.com/a/hWrBHccWLA" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url" tabindex="-1" aria-hidden="true"><img src="https://t3a.coupangcdn.com/thumbnails/remote/212x212ex/image/retail/images/4390841723813-38f4fd83-7d62-4ca0-beb4-f8082644f042.jpg" alt="" loading="lazy"></a>
+<div class="what"><b>청정원 바로 eat 안주야 달콤쫄깃 육포</b><small>리뷰 491개</small><small class="price">12,300원</small></div>
+<a class="buy" href="https://link.coupang.com/a/hWrBHccWLA" target="_blank" rel="sponsored nofollow noopener" referrerpolicy="unsafe-url">쿠팡에서 보기</a></li>
+</ul>
+<p class="note">가격은 10월 18일 기준이며 지금 쿠팡 가격과 다를 수 있습니다. 이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</section>
+
+<section>
+<h2>사료 줄 때 알아둘 점</h2>
+<ol class="tips">
+<li>나이가 들수록 근육이 줄어 같은 양을 먹어도 살이 찌기 쉽습니다. 40대 이후에는 20대 때 먹던 양이 그대로 남는 셈입니다.</li>
+<li>살을 빼고 싶다면 하루 500kcal쯤 줄이는 것이 흔한 방법입니다. 밥 한 공기 반, 또는 맥주 500cc 두 잔 남짓입니다.</li>
+<li>야식과 술안주는 생각보다 열량이 높습니다. 치킨 한 마리면 하루 필요 열량의 대부분을 채웁니다.</li>
+<li>간식은 하루 열량의 10% 안쪽이 무난합니다. 과자보다 견과·육포처럼 단백질이 있는 간식이 배도 오래 부릅니다.</li>
+</ol>
+</section>
+
+<section>
+<h2>다른 계산기</h2>
+<ul class="pages">
+<li><a href="/baby/snack/"><span><b>어린이 간식 계산기</b><small>나이별 하루 간식 열량과 당류</small></span></a></li>
+<li><a href="/pet/dog/"><span><b>강아지 사료 급여량 계산기</b><small>체중별 하루 사료량</small></span></a></li>
+<li><a href="/pet/cat/"><span><b>고양이 사료 급여량 계산기</b><small>체중별 하루 사료량</small></span></a></li>
+</ul>
+</section>
+</main>
+<footer class="site">
+<div class="wrap">
+<p>웃자고 붙인 이름이지만 계산은 진짜입니다. 기초대사량은 Mifflin-St Jeor 식(10 × 체중 + 6.25 × 키 − 5 × 나이 + 5)에 활동량 계수를 곱했고, 또래 평균은 보건복지부 2020 한국인 영양소 섭취기준의 에너지 필요추정량입니다. 음식 열량은 흔히 쓰는 어림값이라 제품·조리법마다 다릅니다. 건강 문제로 식단을 바꿀 때는 의사·영양사와 상의하세요.</p>
+<p class="more"><a href="/">가전 전기요금</a> · <a href="/gas/">도시가스 요금</a> · <a href="/filter/">필터 찾기</a> · <a href="/size/">가전 용량</a> · <a href="/tv/">TV 시청 거리</a> · <a href="/pet/">사료량</a> · <a href="/baby/">육아</a> · <a href="/invest/">공모주·배당</a> · <a href="/housing/">청약 가점</a></p>
+<p class="info"><a href="/guide/">읽을거리</a> · <a href="/faq/">자주 묻는 질문</a> · <a href="/about/">사이트 소개</a> · <a href="/privacy/">개인정보처리방침</a></p>
+</div>
+</footer>
+<script type="module" src="/assets/tools.js?v=6bb900fa"></script>
+</body>
+</html>
