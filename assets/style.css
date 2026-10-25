@@ -223,3 +223,6 @@ td[data-l="4"] { background: var(--heat); color: #fff; }
   .tile b { font-size: 0.75rem; }
   table.heat th, table.heat td { padding: 11px 6px; font-size: 0.9375rem; }
 }
+.faq { display: grid; gap: 16px; }
+.faq h3 { margin: 0 0 4px; font-size: 1rem; }
+.faq p { margin: 0; }

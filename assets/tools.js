@@ -1,10 +1,10 @@
 // 평수별 가전 용량, TV 시청 거리, 사료 급여량, 공모주·배당, 청약 가점, 도시가스 요금, 육아 계산기의 브라우저 동작.
 // 입력은 [data-in="이름"], 결과는 [data-out="이름"] 으로 찾는다.
-import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=50787709';
-import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=50787709';
-import { gasBill } from './gas-rules.js?v=50787709';
-import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=50787709';
-import { ACTIVITY, DIET_CUT, FOODS, SNACK_WHO, husband, maleEer, snackBudget } from './snack-rules.js?v=50787709';
+import { PYEONG_M2, PET, TV_ANGLES, airconPyeong, dehumidifierLiters, feedGrams, purifierPyeong, rer, tvDistanceCm, tvInch } from './rules.js?v=f0c8ef78';
+import { accountScore, dayLabel, dependentScore, dividendAfterTax, dividendDates, homelessScore, ipoEqual, ipoProportional, ipoShares, LISTING_RANGE } from './money-rules.js?v=f0c8ef78';
+import { gasBill } from './gas-rules.js?v=f0c8ef78';
+import { MILESTONES, ageMonths, dayCount, formula, weaningStage } from './baby-rules.js?v=f0c8ef78';
+import { ACTIVITY, DIET_CUT, FOODS, SNACK_WHO, husband, maleEer, snackBudget } from './snack-rules.js?v=f0c8ef78';
 
 const root = document.querySelector('[data-tool]');
 const val = (name) => {
