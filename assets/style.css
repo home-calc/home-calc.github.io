@@ -48,6 +48,8 @@ footer.site p { margin: 0; }
 footer.site .more { margin-top: 12px; }
 footer.site .more a { color: inherit; font-weight: 700; }
 footer.site .info { margin-top: 8px; }
+footer.site .updated { margin-top: 8px; }
+footer.site .updated a { color: inherit; }
 footer.site .info a { color: inherit; }
 .prose p { max-width: 62ch; margin: 0 0 12px; }
 .prose ul { max-width: 62ch; margin: 0 0 12px; padding-left: 1.2em; display: grid; gap: 8px; }
@@ -125,6 +127,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 
 /* 추천 제품·대안 */
 .shelf { margin-top: 44px !important; }
+.cp-banner { margin-top: 32px; }
+.cp-banner .note { margin-top: 4px; }
+.cp-banner iframe { display: block; width: 100%; max-width: 680px; height: 90px; border: 0; }
 .items { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
 .items li { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--card); border: 1.5px solid var(--ink); border-radius: 14px; }
 .items .ph { display: block; aspect-ratio: 1; overflow: hidden; background: #fff; border-radius: 10px; }
